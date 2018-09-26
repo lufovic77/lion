@@ -1,3 +1,4 @@
+#-*-coding: utf-8-*-
 """
 author: Mookeun Ji, goofcode@gmail.com
 
@@ -40,7 +41,7 @@ def send_basic_text_message(content, time=None, link=None, share=True, mode='pha
 
         if link is not None:
             wait_until_load(driver, 'xpath', locators['add_link_radio_xpath']).click()
-            wait_until_load(driver, 'id', locators['link_name_id']).send_keys("바로가기")
+            wait_until_load(driver, 'id', locators['link_name_id']).send_keys("")
             wait_until_load(driver, 'id', locators['link_input_id']).clear()
             wait_until_load(driver, 'id', locators['link_input_id']).send_keys(link)
 
