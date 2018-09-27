@@ -1,4 +1,5 @@
-#Note
+Note
+=====
 PhantomJS is no more officially suppported due to the advent of Headless Chrome. <br/>
 Refer  [here] (https://groups.google.com/forum/#!topic/phantomjs/9aI5d-LDuNE) for more details. 
 
