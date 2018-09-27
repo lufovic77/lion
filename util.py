@@ -1,7 +1,5 @@
-#!/usr/bin/env python
 """
 author: Mookeun Ji, goofcode@gmail.com
-modified: Kyung-Min Kim, lufovic77@gmail.com
 """
 
 import json
