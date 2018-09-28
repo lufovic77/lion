@@ -53,7 +53,7 @@ def get_settings_and_locators():
 
 
 # utils for crawling
-def get_driver(mode='chrome'):
+def get_driver(mode='phantom'):
     """
     :param mode: run mode('chrome' or 'phantom')
     :exception  raise NoSuchDriverException if mode is incorrect
@@ -80,7 +80,7 @@ def wait_until_load(driver, by, locator, timeout=30):
     """
     :param driver: selenium driver loading page
     :param by: locating method 'id', 'xpath', 'class'
-    :param locator: proper locator according to param by
+    :param locator: proper locator according to pageram by
     :param timeout: maximum time to wait. After this time elapsed, TimeoutException will be raised.
     :return: web element object waiting for
     """
@@ -100,7 +100,7 @@ def login_pf_center(driver):
     to_login_page(driver)
     wait_until_load(driver, 'id', locators['login_email_input_id']).send_keys(settings['admin_info']['email'])
     wait_until_load(driver, 'id', locators['login_pw_input_id']).send_keys(settings['admin_info']['pw'])
-    wait_until_load(driver, 'id', locators['login_submit_btn_id']).click()
+    wait_until_load(driver, 'id', locators['login_submit_btn_id']).submit()
     return driver
 
 def to_login_page(driver):
