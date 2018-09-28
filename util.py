@@ -53,7 +53,7 @@ def get_settings_and_locators():
 
 
 # utils for crawling
-def get_driver(mode='phantom'):
+def get_driver(mode='chrome'):
     """
     :param mode: run mode('chrome' or 'phantom')
     :exception  raise NoSuchDriverException if mode is incorrect
