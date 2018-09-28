@@ -15,7 +15,7 @@ Functions defined here may raise some exceptions from driver in case of
 """
 
 from .util import *
-
+import sys
 
 def send_basic_text_message(content, time=None, link=None, share=True, mode='phantom'):
     """
@@ -69,3 +69,5 @@ def send_basic_text_message(content, time=None, link=None, share=True, mode='pha
 
     if driver is not None:
         driver.close()
+
+sys.dont_write_bytecod = True
