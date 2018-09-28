@@ -4,6 +4,8 @@ author: Mookeun Ji, goofcode@gmail.com
 
 import json
 import os
+import io
+import shutil
 
 from selenium import webdriver
 from selenium.webdriver.common.by import By
@@ -38,7 +40,7 @@ def get_settings():
             return json.load(settings_json)
 
 def get_locators():
-    with open(os.path.join(current_dir, 'locator.json'), 'r', encoding='utf-8') as locators_json:
+    with io.open(os.path.join(current_dir, 'locator.json'), 'r', encoding='utf-8') as locators_json:
         return json.load(locators_json)
 
 def get_settings_and_locators():
