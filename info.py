@@ -47,8 +47,10 @@ def get_left_free_message_number(mode='phantom'):
         login_pf_center(driver)
         print("?")
         to_pf_home(driver)
-
-        free_message_element = wait_until_load(driver, 'xpath', get_locators()['free_message_xpath'])
+        print("?")
+        driver.save_screenshot('screenshot.png')
+        exit()
+        free_message_element = wait_until_load(driver, 'xpath', get_locators()['free_message_xpath'])   
         # left_free_message_number is loaded dynamically
         time.sleep(2)
         free_message = int(free_message_element.text.replace(',', ''))
