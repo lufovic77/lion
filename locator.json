@@ -2,12 +2,12 @@
   "_comment": "this file specifies url or component locator of kakao web pages, so can be changed depending on the pages",
 
   "pf_center_url": "https://center-pf.kakao.com/",
-  "pf_login_url": "https://accounts.kakao.com/",
+  "pf_login_url": "https://accounts.kakao.com/login/kakaoforbusiness",
   "basic_message_url": "messages/new/basic",
   "to_login_page_btn_xpath": "//a[contains(text(),'관리자 로그인')]",
-  "login_email_input_id": "email",
-  "login_pw_input_id": "password",
-  "login_submit_btn_id": "btn_login",
+  "login_email_input_id": "loginEmail",
+  "login_pw_input_id": "loginPw",
+  "login_submit_btn_id": "//*[@id='login-form']/fieldset/button",
 
   "friend_number_xpath": "//span[contains(text(), '구독자')]/../span[2]",
   "free_message_xpath": "//strong[contains(text(), '무료 발송 메시지')]/../div[1]/em[1]/span[1]",
