@@ -99,9 +99,17 @@ def wait_until_load(driver, by, locator, timeout=30):
 def login_pf_center(driver):
     settings, locators = get_settings_and_locators()
     to_login_page(driver)
-    wait_until_load(driver, 'id', locators['login_email_input_id']).send_keys(settings['admin_info']['email'])
-    wait_until_load(driver, 'id', locators['login_pw_input_id']).send_keys(settings['admin_info']['pw'])
+    wait_until_load(driver, 'xpath', locators['login_email_input_id']).send_keys(settings['admin_info']['email'])
+    wait_until_load(driver, 'xpath', locators['login_pw_input_id']).send_keys(settings['admin_info']['pw'])
     wait_until_load(driver, 'xpath', locators['login_submit_btn_id']).submit()
+
+    #time.sleep(10)
+   # driver.find_element_by_xpath(locators['popup_xbutton']).click()
+    time.sleep(10)
+    driver.find_element_by_xpath(locators['button_to_skku']).click()
+    time.sleep(10)
+    driver.save_screenshot('screenshot.png')
+    exit()
     return driver
 
 def to_login_page(driver):
