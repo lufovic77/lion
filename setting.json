@@ -1,9 +1,9 @@
 {
   "admin_info": {
-    "email": "admain@email.com",
-    "pw": "admin_password"
+    "email": "lufovic77@naver.com",
+    "pw": "940320k"
   },
-  "pf_home_url": "https://center-pf.kakao.com/_XXXXXXX/",
-  "chrome_driver_path": "/path/to/chrome/driver",
-  "phantom_driver_path": "/path/to/phantom/driver"
+  "pf_home_url": "https://center-pf.kakao.com/_AxdxfMj/",
+  "chrome_driver_path": "/usr/local/bin/chromedriver",
+  "phantom_driver_path": "/home/kyungmin/.npm-global/lib/node_modules/phantomjs/lib/phantom/bin/phantomjs"
 }
