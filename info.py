@@ -8,7 +8,7 @@ import time
 from .util import *
 
 
-def get_friend_number(mode='chrome'):
+def get_friend_number(mode='phantom'):
     """
     :param mode: 'chrome' or 'phantom'(headless)
     :return: (int) number of friend of plus friend
@@ -43,22 +43,15 @@ def get_left_free_message_number(mode='phantom'):
     driver = None
     try:
         driver = get_driver(mode)
-        print("?")
         login_pf_center(driver)
-        print("?")
         to_pf_home(driver)
-        print("?")
-        driver.get(get_locators()['pf_center_homepage'])
-
-        time.sleep(5)
-        driver.save_screenshot('screenshot.png')
-        exit()
 
         free_message_element = wait_until_load(driver, 'xpath', get_locators()['free_message_xpath'])   
         # left_free_message_number is loaded dynamically
         time.sleep(2)
         free_message = int(free_message_element.text.replace(',', ''))
         driver.close()
+        print("free_message: ")
         return free_message
 
     except Exception as ex:

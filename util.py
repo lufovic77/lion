@@ -113,7 +113,7 @@ def login_pf_center(driver):
         pickle.dump( driver.get_cookies() , open("cookies.pkl","wb"))
 
 
-    time.sleep(10)
+    time.sleep(5)
    # driver.find_element_by_xpath(locators['popup_xbutton']).click()
    # time.sleep(10)
     driver.get(get_locators()['pf_center_homepage'])
