@@ -7,6 +7,7 @@ import os
 import io
 import shutil
 import time
+import pickle
 
 from selenium import webdriver
 from selenium.webdriver.common.by import By
@@ -102,14 +103,20 @@ def login_pf_center(driver):
     wait_until_load(driver, 'xpath', locators['login_email_input_id']).send_keys(settings['admin_info']['email'])
     wait_until_load(driver, 'xpath', locators['login_pw_input_id']).send_keys(settings['admin_info']['pw'])
     wait_until_load(driver, 'xpath', locators['login_submit_btn_id']).submit()
+    ##login
 
-    #time.sleep(10)
+    try:
+        cookies = pickle.load(open("cookies.pkl", "rb"))
+        for cookie in cookies :
+            driver.add_cookie(cookie)
+    except:
+        pickle.dump( driver.get_cookies() , open("cookies.pkl","wb"))
+
+
+    time.sleep(10)
    # driver.find_element_by_xpath(locators['popup_xbutton']).click()
-    time.sleep(10)
-    driver.find_element_by_xpath(locators['button_to_skku']).click()
-    time.sleep(10)
-    driver.save_screenshot('screenshot.png')
-    exit()
+   # time.sleep(10)
+    driver.get(get_locators()['pf_center_homepage'])
     return driver
 
 def to_login_page(driver):
